@@ -38,7 +38,7 @@ fun OutlineText(
 ) {
     OutlinedTextField(
         value = value,
-        onValueChange = { onValueChange = it },
+        onValueChange = { onValueChange(it) },
         leadingIcon = {
             Icon(
                 imageVector = icons,
