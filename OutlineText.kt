@@ -1,10 +1,9 @@
-package com.example.facebookpractice.common
+package com.example.firebasenotesapp.common
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.rounded.Preview
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -15,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color.Companion.Gray
@@ -38,7 +38,7 @@ fun OutlineText(
 ) {
     OutlinedTextField(
         value = value,
-        onValueChange = { onValueChange(it) },
+        onValueChange =  { onValueChange(it) },
         leadingIcon = {
             Icon(
                 imageVector = icons,
@@ -70,8 +70,8 @@ fun OutlineText(
 
 @Preview(showBackground = true)
 @Composable
-private fun prev() {
-    var text by remember { mutableStateOf("") }
+private fun preview() {
+    var text by rememberSaveable { mutableStateOf("") }
     OutlineText(
         value = text,
         onValueChange = {text = it},
